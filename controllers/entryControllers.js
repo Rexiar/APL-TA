@@ -24,7 +24,7 @@ exports.deleteEntry = async (req, res) => {
     const { id } = req.body;
     const entry = await messageEntry.findByPk(id);
     if (entry == null) {
-      return res.status(404).json({ error: 'Entry ' + id + ' not found.'});
+      return res.status(404).json({ error: 'Entry ' + id + ' not found'});
     }
       await entry.destroy();
       res.status(204).send();
@@ -39,7 +39,7 @@ exports.editEntry = async (req, res) => {
     const { id, message } = req.body;
     const entry = await messageEntry.findByPk(id);
     if (entry == null){
-      return res.status(404).json({ error: 'Entry ' + id + ' not found.'});
+      return res.status(404).json({ error: 'Entry ' + id + ' not found'});
     }
     entry.message = message;
     await entry.save();
