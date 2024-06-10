@@ -135,3 +135,6 @@ Thumbs.db
 ca-cert.pem
 server-cert.pem
 server-key.pem
+
+# Github
+.github/*
