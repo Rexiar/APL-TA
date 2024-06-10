@@ -20,7 +20,7 @@ jobs:
 
     - name: Deploy to Server
       run: |
-        ssh -o StrictHostKeyChecking=no ditya@youre-chornically.online << 'EOF'
+        ssh -o StrictHostKeyChecking=no ditya@youre-chronically.online << 'EOF'
           cd /home/ditya/APL-TA
           git pull origin master
         EOF
