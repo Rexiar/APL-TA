@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout code
@@ -20,7 +20,11 @@ jobs:
 
     - name: Deploy to Server
       run: |
+        echo "Running SSH command..."
         ssh -o StrictHostKeyChecking=no ditya@youre-chronically.online << 'EOF'
+          pkill screen
+          screen
           cd /home/ditya/APL-TA
           git pull origin master
+          node ./app.js
         EOF
