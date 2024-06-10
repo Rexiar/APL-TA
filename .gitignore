@@ -133,3 +133,5 @@ Thumbs.db
 
 # Ignore SSL certificate files
 ca-cert.pem
+server-cert.pem
+server-key.pem

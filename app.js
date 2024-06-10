@@ -1,17 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const userRoutes = require('./routes/routes');
-const sequelize = require('./config/config');
+const entryRoutes = require('./routes/entryRoutes');
+const sequelize = require('./config');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.SERVER_PORT;
 
 app.use(bodyParser.json());
-app.use('/api', userRoutes);
-
-app.get('/', (req, res) => {
-  res.send('Welcome to the Node.js MVC application using MariaDB');
-});
+app.use('/', entryRoutes);
 
 sequelize.sync()
   .then(() => {
